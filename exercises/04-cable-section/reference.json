@@ -1,0 +1,11 @@
+{
+  "source": "multi-layer Lam\u00e9 solution, plane strain, bonded layers, external pressure 10 MPa (workshop/layers.py); TEACHING SIMPLIFICATION; instructor to verify",
+  "values": {
+    "u_r_core_edge": -9.112679587e-05,
+    "u_r_outer": -0.003570570008
+  },
+  "tolerance": {
+    "rel": 0.02,
+    "abs": 0.0
+  }
+}

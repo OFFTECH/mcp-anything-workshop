@@ -1,0 +1,17 @@
+{
+  "source": "Euler-Bernoulli cantilever under a tip load: tip deflection = P*L^3/(3*E*I) with I = w*h^3/12, support reaction = P (P = 21 N in -y, L = 1000 mm, h = 20 mm, w = 20 mm, E = 210000 MPa)",
+  "values": {
+    "tip_displacement_y": -2.5,
+    "support_reaction_y": 21.0
+  },
+  "tolerance": {
+    "rel": 0.02,
+    "abs": 0.0
+  },
+  "tolerances": {
+    "support_reaction_y": {
+      "rel": 1e-06,
+      "abs": 0.0001
+    }
+  }
+}

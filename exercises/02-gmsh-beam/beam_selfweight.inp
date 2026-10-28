@@ -1,0 +1,25 @@
+** Workshop exercise 02: self-weight of a cantilever meshed by Gmsh (our own deck).
+** Units: N, mm, s; density in t/mm^3 (CalculiX 2.21 manual section 3).
+** The mesh comes from:  gmsh beam.geo -3 -format inp -o beam_mesh.inp
+*INCLUDE, INPUT=beam_mesh.inp
+*MATERIAL, NAME=STEEL
+*ELASTIC
+210000., 0.3
+*DENSITY
+7.85E-9
+*SOLID SECTION, ELSET=BEAM, MATERIAL=STEEL
+*STEP
+*STATIC
+*BOUNDARY
+FIXED, 1, 3
+*DLOAD
+BEAM, GRAV, 9810., 0., -1., 0.
+*NODE PRINT, NSET=TIP
+U
+*NODE PRINT, NSET=FIXED, TOTALS=ONLY
+RF
+*NODE FILE
+U
+*EL FILE
+S
+*END STEP

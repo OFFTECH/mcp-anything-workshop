@@ -1,0 +1,17 @@
+{
+  "source": "Euler-Bernoulli cantilever under its own weight: tip deflection = q*L^4/(8*E*I) with q = density*g*w*h and I = w*h^3/12, support reaction = q*L (L = 1000 mm, h = 20 mm, w = 20 mm, E = 210000 MPa, density = 7.85e-09 t/mm^3, g = 9810 mm/s^2 acting in -y); the printed total force of FIXED also holds the self-weight that the FIXED nodes carry themselves (CalculiX manual section 7.98), hence the 1 % tolerance on the reaction",
+  "values": {
+    "tip_displacement_y": -1.375151786,
+    "support_reaction_y": 30.8034
+  },
+  "tolerance": {
+    "rel": 0.02,
+    "abs": 0.0
+  },
+  "tolerances": {
+    "support_reaction_y": {
+      "rel": 0.01,
+      "abs": 0.0
+    }
+  }
+}

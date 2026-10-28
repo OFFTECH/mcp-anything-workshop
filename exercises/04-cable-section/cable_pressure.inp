@@ -1,0 +1,40 @@
+** Workshop exercise 04: quarter of a simplified four-layer cable section under external pressure (our own deck).
+** TEACHING SIMPLIFICATION: plane strain, bonded linear-elastic homogeneous layers, illustrative material values.
+** Units: N, mm, MPa. Needs cable_mesh.inp (Gmsh output with CPS6 renamed to CPE6) and cable_pressure_load.inc
+** (one *DLOAD line per outer element face); see README.md.
+*INCLUDE, INPUT=cable_mesh.inp
+*MATERIAL, NAME=COPPERLIKE
+*ELASTIC
+110000., 0.34
+*MATERIAL, NAME=POLYMERLIKE
+*ELASTIC
+1000., 0.45
+*MATERIAL, NAME=ALUMINIUMLIKE
+*ELASTIC
+70000., 0.33
+*MATERIAL, NAME=STEELLIKE
+*ELASTIC
+210000., 0.30
+*SOLID SECTION, ELSET=CORE, MATERIAL=COPPERLIKE
+1.
+*SOLID SECTION, ELSET=INSULATION, MATERIAL=POLYMERLIKE
+1.
+*SOLID SECTION, ELSET=SHEATH, MATERIAL=ALUMINIUMLIKE
+1.
+*SOLID SECTION, ELSET=ARMOUR, MATERIAL=STEELLIKE
+1.
+*STEP
+*STATIC
+*BOUNDARY
+SYMX, 1
+SYMY, 2
+*INCLUDE, INPUT=cable_pressure_load.inc
+*NODE PRINT, NSET=P_CORE
+U
+*NODE PRINT, NSET=P_OUTER
+U
+*NODE FILE
+U
+*EL FILE
+S
+*END STEP

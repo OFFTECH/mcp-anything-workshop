@@ -1,0 +1,8 @@
+{
+  "name": "MCP-Anything workshop",
+  "build": {"dockerfile": "Dockerfile", "context": "."},
+  "hostRequirements": {"cpus": 4, "memory": "8gb", "storage": "32gb"},
+  "remoteUser": "vscode",
+  "containerEnv": {"DISABLE_AUTOUPDATER": "1", "UV_LINK_MODE": "copy"},
+  "postCreateCommand": "bash .devcontainer/post-create.sh"
+}
